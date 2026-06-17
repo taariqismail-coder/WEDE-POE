@@ -3,42 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Riqos Production - Professional music production, artist development & visuals by Taariq Ismail.">
-    <title>Riqos Production | Music • Visuals • Artist Development</title>
+
+    <!-- SEO -->
+    <title>Riqos Productions | Creative Label Ecosystem</title>
+    <meta name="description" content="Riqos Productions is a futuristic creative label focused on music production, visuals, artist development and underground culture.">
+    <meta name="keywords" content="music production, trap label, artist development, video production, riqos productions">
+    <meta name="author" content="Taariq Ismail">
+
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <nav>
-        <div class="title">Founded by: Taariq Ismail</div>
-        <ul>
-            <li><a class="active" href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="enquiry.html">Enquiry</a></li>
-        </ul>
-    </nav>
 
-    <section class="hero">
-        <video autoplay muted loop>
-            <source src="assets/videos/hero.mp4" type="video/mp4">
-        </video>
-        <div>
-            <h1>RIQOS <span>PRODUCTION</span></h1>
-            <p>Music Production • Visuals • Artist Development</p>
-            <a class="btn" href="services.html">Explore Services</a>
+<!-- LOADING SCREEN -->
+<div id="loader">
+    <h1>RIQOS PROD</h1>
+</div>
+
+<!-- PARTICLE BACKGROUND -->
+<div id="particles"></div>
+
+<!-- NAV -->
+<nav id="navbar">
+    <div class="logo">RIQOS PROD</div>
+
+    <ul class="nav-links">
+        <li><a class="active" href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="enquiry.html">Enquiry</a></li>
+    </ul>
+
+    <button id="themeToggle">◐</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+
+    <video autoplay muted loop playsinline>
+        <source src="assets/videos/hero.mp4">
+    </video>
+
+    <div class="overlay"></div>
+
+    <div class="hero-content reveal">
+        <h1 id="typewriter"></h1>
+
+        <p>
+            Underground creative label building the future of music, visuals and artist identity.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="services.html" class="btn">Explore Services</a>
+            <a href="enquiry.html" class="btn ghost">Book Session</a>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Dynamic Featured Artists -->
-    <section>
-        <h2 class="title">Featured Artists</h2>
-        <div id="artists" class="artist-grid"></div>
-    </section>
+<!-- STATS -->
+<section class="stats">
 
-    <footer>© 2026 Riqos Productions • All Rights Reserved</footer>
+    <div class="stat-card reveal">
+        <h2 class="counter" data-target="27">0</h2>
+        <p>Artists Developed</p>
+    </div>
 
-    <script src="js/script.js"></script>
+    <div class="stat-card reveal">
+        <h2 class="counter" data-target="210">0</h2>
+        <p>Projects Completed</p>
+    </div>
+
+    <div class="stat-card reveal">
+        <h2 class="counter" data-target="16">0</h2>
+        <p>Visual Campaigns</p>
+    </div>
+
+</section>
+
+<!-- FEATURED -->
+<section>
+
+    <h2 class="section-title reveal">THE FUTURE OF SOUND</h2>
+
+    <div class="grid">
+
+        <div class="card reveal">
+            <h3>Production</h3>
+            <p>Industry level dark melodic trap production and custom sound design.</p>
+        </div>
+
+        <div class="card reveal">
+            <h3>Creative Direction</h3>
+            <p>We craft artist identity and aesthetic at global standard.</p>
+        </div>
+
+        <div class="card reveal">
+            <h3>Visuals</h3>
+            <p>Cinematic video production engineered for impact.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- BACK TO TOP -->
+<button id="topBtn">↑</button>
+
+<footer>
+    © 2026 Riqos Productions
+</footer>
+
+<script src="js/script.js"></script>
+
 </body>
 </html>

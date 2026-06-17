@@ -31,18 +31,15 @@
 
 <div class="filter-buttons">
 
-<button onclick="filterGallery('all')">All</button>
-<button onclick="filterGallery('studio')">Studio</button>
-<button onclick="filterGallery('video')">Video</button>
-<button onclick="filterGallery('bts')">BTS</button>
-
 </div>
 
 <div class="gallery-grid">
 
 <img class="gallery-item studio" src="Assets/studio sesh.jpeg" onclick="openLightbox(this.src)">
 
-<img class="gallery-item bts" src="Assets/mv bts.jpeg" onclick="openLightbox(this.src)">
+<video class="gallery-item bts" controls onclick="openLightbox(this.src)">
+  <source src="Assets/extreme bts 1.mp4" type="video/mp4" >
+</video>
 
 <img class="gallery-item video" src="Assets/bts mv.jpeg" onclick="openLightbox(this.src)">
 

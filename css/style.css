@@ -675,7 +675,7 @@ nav ul li a.active {
     height: 140px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid #8a2be2;
+    border: 4px solid #910c13;
     margin-bottom: 16px;
 }
 
@@ -688,4 +688,102 @@ nav ul li a.active {
     font-size: 14.5px;
     line-height: 1.6;
     color: #ddd;
+}
+/* ================= PREMIUM ROSTER STYLES ================= */
+.artist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 35px;
+    margin-top: 40px;
+}
+
+.artist-card {
+    background: linear-gradient(145deg, #1f1f28, #16161f);
+    border-radius: 20px;
+    padding: 25px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(138, 43, 226, 0.15);
+}
+
+.artist-card:hover {
+    transform: translateY(-15px) scale(1.03);
+    box-shadow: 0 25px 50px rgba(138, 43, 226, 0.3);
+    border-color: rgba(138, 43, 226, 0.4);
+}
+
+.artist-img-container {
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid #8a2be2;
+    box-shadow: 0 0 0 8px rgba(138, 43, 226, 0.1);
+    transition: all 0.4s ease;
+}
+
+.artist-card:hover .artist-img-container {
+    border-color: #a855f7;
+    transform: scale(1.08);
+}
+
+.artist-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.artist-card h3 {
+    font-size: 1.55rem;
+    margin: 12px 0 6px;
+    color: #fff;
+}
+
+.artist-role {
+    color: #c4b5fd;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.artist-listeners {
+    font-size: 0.95rem;
+    color: #94a3b8;
+    margin-bottom: 16px;
+}
+
+.artist-tags {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.artist-tags span {
+    background: rgba(138, 43, 226, 0.2);
+    color: #c4b5fd;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    border: 1px solid rgba(138, 43, 226, 0.3);
+}
+
+.profile-details {
+    display: none;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(138, 43, 226, 0.3);
+    text-align: left;
+    color: #e0e0e0;
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+.profile-details strong {
+    color: #a855f7;
 }

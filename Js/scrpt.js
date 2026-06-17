@@ -218,3 +218,69 @@ answer.style.display = "block";
 });
 
 });
+/* gallery filter */
+
+function filterGallery(category){
+
+let items = document.querySelectorAll(".gallery-item");
+
+items.forEach(item=>{
+
+if(category === "all"){
+
+item.style.display = "block";
+
+}
+
+else if(item.classList.contains(category)){
+
+item.style.display = "block";
+
+}
+
+else{
+
+item.style.display = "none";
+
+}
+
+});
+
+}
+
+
+/* lightbox */
+
+function openLightbox(src){
+
+document.getElementById("lightbox").style.display = "flex";
+
+document.getElementById("lightbox-img").src = src;
+
+}
+
+function closeLightbox(){
+
+document.getElementById("lightbox").style.display = "none";
+
+}
+
+
+/* booking */
+
+function calculateBooking(){
+
+let service =
+parseInt(document.getElementById("service").value);
+
+let hours =
+parseInt(document.getElementById("hours").value);
+
+let total = service + hours;
+
+document.getElementById("price").innerText =
+"R" + total;
+
+}
+
+

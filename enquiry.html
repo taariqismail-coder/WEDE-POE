@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Booking Enquiry | Riqos Productions</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<nav>
+<div class="logo">RIQOS PROD</div>
+
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a class="active" href="enquiry.html">Enquiry</a></li>
+</ul>
+</nav>
+
+<section>
+
+<h2 class="section-title reveal">BOOK A SESSION</h2>
+
+<form id="bookingForm">
+
+<input id="name" placeholder="Artist Name">
+
+<select id="service">
+
+<option value="800">Beat Production</option>
+<option value="500">Mixing & Mastering</option>
+<option value="3000">Music Video</option>
+<option value="7000">Artist Development</option>
+
+</select>
+
+<select id="hours">
+
+<option value="0">Quick Session</option>
+<option value="400">Standard Session</option>
+<option value="900">Full Day Session</option>
+
+</select>
+
+<textarea id="details" placeholder="Describe project"></textarea>
+
+<div class="price-box">
+Estimated Price:
+<span id="price">R0</span>
+</div>
+
+<button type="button" class="btn" onclick="calculateBooking()">
+Calculate
+</button>
+
+<button type="button" class="btn" onclick="sendBooking()">
+Send WhatsApp
+</button>
+
+</form>
+<input id="name" placeholder="Artist Name">
+
+<input id="email" placeholder="Email Address">
+
+<select id="service">
+<option value="800">Beat Production</option>
+<option value="500">Mixing & Mastering</option>
+<option value="3000">Music Video</option>
+<option value="7000">Artist Development</option>
+</select>
+
+<select id="hours">
+<option value="0">Quick Session</option>
+<option value="400">Standard Session</option>
+<option value="900">Full Day Session</option>
+</select>
+
+<textarea id="details" placeholder="Describe your project in detail"></textarea>
+
+<div class="price-box">
+Estimated Price: <span id="price">R0</span>
+</div>
+
+<button type="button" class="btn" onclick="calculateBooking()">Calculate</button>
+<button type="button" class="btn" onclick="sendBooking()">Send Booking</button>
+
+</section>
+
+<footer>© 2026 Riqos Productions</footer>
+
+<script src="Js/scrpt.js"></script>
+
+</body>
+</html>

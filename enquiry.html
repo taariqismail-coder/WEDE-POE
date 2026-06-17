@@ -32,45 +32,13 @@
 
 <form id="bookingForm">
 
-<input id="name" placeholder="Artist Name">
+<label for="name">Artist Name</label>
+<input id="name" placeholder="Your name">
 
-<select id="service">
+<label for="email">Email Address</label>
+<input id="email" type="email" placeholder="you@example.com">
 
-<option value="800">Beat Production</option>
-<option value="500">Mixing & Mastering</option>
-<option value="3000">Music Video</option>
-<option value="7000">Artist Development</option>
-
-</select>
-
-<select id="hours">
-
-<option value="0">Quick Session</option>
-<option value="400">Standard Session</option>
-<option value="900">Full Day Session</option>
-
-</select>
-
-<textarea id="details" placeholder="Describe project"></textarea>
-
-<div class="price-box">
-Estimated Price:
-<span id="price">R0</span>
-</div>
-
-<button type="button" class="btn" onclick="calculateBooking()">
-Calculate
-</button>
-
-<button type="button" class="btn" onclick="sendBooking()">
-Send WhatsApp
-</button>
-
-</form>
-<input id="name" placeholder="Artist Name">
-
-<input id="email" placeholder="Email Address">
-
+<label for="service">Service</label>
 <select id="service">
 <option value="800">Beat Production</option>
 <option value="500">Mixing & Mastering</option>
@@ -78,20 +46,26 @@ Send WhatsApp
 <option value="7000">Artist Development</option>
 </select>
 
+<label for="hours">Session Type</label>
 <select id="hours">
 <option value="0">Quick Session</option>
 <option value="400">Standard Session</option>
 <option value="900">Full Day Session</option>
 </select>
 
+<label for="details">Project Details</label>
 <textarea id="details" placeholder="Describe your project in detail"></textarea>
 
 <div class="price-box">
 Estimated Price: <span id="price">R0</span>
 </div>
 
+<div class="form-msg" id="formMsg"></div>
+
 <button type="button" class="btn" onclick="calculateBooking()">Calculate</button>
-<button type="button" class="btn" onclick="sendBooking()">Send Booking</button>
+<button type="button" class="btn ghost" onclick="sendBooking()">Send WhatsApp</button>
+
+</form>
 
 </section>
 

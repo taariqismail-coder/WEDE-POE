@@ -193,6 +193,70 @@ item.style.display = "none";
 }
 
 
+/* ARTIST PLAY BUTTON */
+
+document.querySelectorAll(".artist-play-btn").forEach(btn=>{
+
+btn.addEventListener("click", (e)=>{
+
+    e.stopPropagation();
+
+    const card = btn.closest(".artist-card");
+    const name = card.querySelector("h3").innerText;
+
+    btn.innerText = "⏸";
+
+    setTimeout(()=>{
+        btn.innerText = "▶";
+    }, 1500);
+
+});
+
+});
+
+
+/* SERVICE RESPONSE PANEL */
+
+const serviceItems = document.querySelectorAll(".service-item");
+const serviceResponse = document.getElementById("serviceResponse");
+
+if(serviceResponse){
+
+serviceItems.forEach(item=>{
+
+item.addEventListener("click", ()=>{
+
+    serviceItems.forEach(i=>i.classList.remove("selected"));
+    item.classList.add("selected");
+
+    document.getElementById("respName").innerText =
+        item.dataset.name;
+
+    document.getElementById("respPrice").innerText =
+        item.dataset.price;
+
+    document.getElementById("respTurnaround").innerText =
+        item.dataset.turnaround;
+
+    const list = document.getElementById("respIncludes");
+    list.innerHTML = "";
+
+    item.dataset.includes.split(",").forEach(point=>{
+        const li = document.createElement("li");
+        li.innerText = point;
+        list.appendChild(li);
+    });
+
+    serviceResponse.classList.add("active");
+
+    serviceResponse.scrollIntoView({behavior:"smooth", block:"center"});
+
+});
+
+});
+
+}
+
 /* FAQ */
 
 const faqButtons = document.querySelectorAll(".faq-question");
@@ -281,6 +345,51 @@ let total = service + hours;
 document.getElementById("price").innerText =
 "R" + total;
 
+const msg = document.getElementById("formMsg");
+if(msg){
+    msg.textContent = "Price updated.";
+    msg.className = "form-msg success";
+}
+
 }
 
 
+function sendBooking(){
+
+const msg = document.getElementById("formMsg");
+
+const name = document.getElementById("name").value.trim();
+const email = document.getElementById("email").value.trim();
+const serviceSelect = document.getElementById("service");
+const hoursSelect = document.getElementById("hours");
+const details = document.getElementById("details").value.trim();
+const price = document.getElementById("price").innerText;
+
+if(!name || !email || !details){
+    msg.textContent = "Please fill in your name, email and project details before sending.";
+    msg.className = "form-msg error";
+    return;
+}
+
+const serviceName = serviceSelect.options[serviceSelect.selectedIndex].text;
+const hoursName = hoursSelect.options[hoursSelect.selectedIndex].text;
+
+const text =
+"New Booking Enquiry%0A" +
+"Name: " + encodeURIComponent(name) + "%0A" +
+"Email: " + encodeURIComponent(email) + "%0A" +
+"Service: " + encodeURIComponent(serviceName) + "%0A" +
+"Session: " + encodeURIComponent(hoursName) + "%0A" +
+"Details: " + encodeURIComponent(details) + "%0A" +
+"Estimated Price: " + encodeURIComponent(price);
+
+const phoneNumber = "27840428473";
+
+const whatsappURL = "https://wa.me/" + phoneNumber + "?text=" + text;
+
+msg.textContent = "Opening WhatsApp...";
+msg.className = "form-msg success";
+
+window.open(whatsappURL, "_blank");
+
+}

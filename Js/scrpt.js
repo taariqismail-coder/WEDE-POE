@@ -112,28 +112,24 @@ window.addEventListener("scroll", ()=>{
     }
 
 });
-
-topBtn.onclick = ()=>{
-
-    window.scrollTo({
-
-        top:0,
-        behavior:"smooth"
-
-    });
-
+if (topBtn) {
+    topBtn.onclick = ()=>{
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
+    }
 }
-
 
 /* DARK MODE */
 
 const theme = document.getElementById("themeToggle");
 
-theme.onclick = ()=>{
-
-    document.body.classList.toggle("light");
-
-};
+if (theme) {
+    theme.onclick = ()=>{
+        document.body.classList.toggle("light");
+    };
+}
 
 
 /* 3D CARD EFFECT */

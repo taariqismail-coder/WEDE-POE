@@ -257,31 +257,8 @@ item.addEventListener("click", ()=>{
 
 }
 
-/* FAQ */
 
-const faqButtons = document.querySelectorAll(".faq-question");
 
-faqButtons.forEach(button=>{
-
-button.addEventListener("click", ()=>{
-
-const answer = button.nextElementSibling;
-
-if(answer.style.display === "block"){
-
-answer.style.display = "none";
-
-}
-
-else{
-
-answer.style.display = "block";
-
-}
-
-});
-
-});
 /* gallery filter */
 
 function filterGallery(category){
@@ -331,65 +308,164 @@ document.getElementById("lightbox").style.display = "none";
 
 
 /* booking */
-
 function calculateBooking(){
+    let service = parseInt(document.getElementById("service").value);
+    let hours = parseInt(document.getElementById("hours").value);
+    let total = service + hours;
+    document.getElementById("price").innerText = "R" + total;
 
-let service =
-parseInt(document.getElementById("service").value);
-
-let hours =
-parseInt(document.getElementById("hours").value);
-
-let total = service + hours;
-
-document.getElementById("price").innerText =
-"R" + total;
-
-const msg = document.getElementById("formMsg");
-if(msg){
-    msg.textContent = "Price updated.";
-    msg.className = "form-msg success";
+    const msg = document.getElementById("formMsg");
+    if(msg){
+        msg.textContent = "Price updated.";
+        msg.className = "form-msg success";
+    }
 }
 
+function sendBooking(method){
+    const msg = document.getElementById("formMsg");
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const serviceSelect = document.getElementById("service");
+    const hoursSelect = document.getElementById("hours");
+    const details = document.getElementById("details").value.trim();
+    const price = document.getElementById("price").innerText;
+
+    if(!name || !email || !details){
+        msg.textContent = "Please fill in your name, email and project details before sending.";
+        msg.className = "form-msg error";
+        return;
+    }
+
+    const serviceName = serviceSelect.options[serviceSelect.selectedIndex].text;
+    const hoursName = hoursSelect.options[hoursSelect.selectedIndex].text;
+
+    const subject = "New Booking Enquiry - " + name;
+    const body = `New Booking Enquiry\n\n` +
+                 `Name: ${name}\n` +
+                 `Email: ${email}\n` +
+                 `Service: ${serviceName}\n` +
+                 `Session: ${hoursName}\n` +
+                 `Details: ${details}\n` +
+                 `Estimated Price: ${price}`;
+
+    if(method === 'whatsapp'){
+        const text = encodeURIComponent(body);
+        const whatsappURL = "https://wa.me/27840428473?text=" + text;
+        msg.textContent = "Opening WhatsApp...";
+        msg.className = "form-msg success";
+        window.open(whatsappURL, "_blank");
+    } 
+    else if(method === 'email'){
+        // Opens default email client
+        const mailto = `mailto:taariqismail21@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        msg.textContent = "Opening email client...";
+        msg.className = "form-msg success";
+        window.location.href = mailto;
+    }
+}
+// Active Nav Highlight
+function setActiveNav() {
+    const currentPage = window.location.pathname.split("/").pop() || "index.html";
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === currentPage) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
 }
 
-
-function sendBooking(){
-
-const msg = document.getElementById("formMsg");
-
-const name = document.getElementById("name").value.trim();
-const email = document.getElementById("email").value.trim();
-const serviceSelect = document.getElementById("service");
-const hoursSelect = document.getElementById("hours");
-const details = document.getElementById("details").value.trim();
-const price = document.getElementById("price").innerText;
-
-if(!name || !email || !details){
-    msg.textContent = "Please fill in your name, email and project details before sending.";
-    msg.className = "form-msg error";
-    return;
+// Gallery Filter + Lightbox
+function filterGallery(category) {
+    const items = document.querySelectorAll('.gallery-item');
+    document.querySelectorAll('.filter-buttons button').forEach(btn => btn.classList.remove('active'));
+    
+    if (category === 'all') {
+        items.forEach(item => item.style.display = 'block');
+    } else {
+        items.forEach(item => {
+            item.style.display = item.getAttribute('data-category') === category ? 'block' : 'none';
+        });
+    }
+    
+    // Highlight active filter button
+    event.currentTarget.classList.add('active');
 }
 
-const serviceName = serviceSelect.options[serviceSelect.selectedIndex].text;
-const hoursName = hoursSelect.options[hoursSelect.selectedIndex].text;
+function openLightbox(el) {
+    const lightbox = document.getElementById('lightbox');
+    const img = document.getElementById('lightbox-img');
+    img.src = el.src || el.querySelector('img').src;
+    lightbox.style.display = 'flex';
+}
 
-const text =
-"New Booking Enquiry%0A" +
-"Name: " + encodeURIComponent(name) + "%0A" +
-"Email: " + encodeURIComponent(email) + "%0A" +
-"Service: " + encodeURIComponent(serviceName) + "%0A" +
-"Session: " + encodeURIComponent(hoursName) + "%0A" +
-"Details: " + encodeURIComponent(details) + "%0A" +
-"Estimated Price: " + encodeURIComponent(price);
+function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+}
 
-const phoneNumber = "27840428473";
+// Service search
+function filterServices() {
+    const searchTerm = document.getElementById('serviceSearch').value.toLowerCase();
+    const cards = document.querySelectorAll('.service-item');
+    
+    cards.forEach(card => {
+        const name = card.getAttribute('data-name') || '';
+        card.style.display = name.toLowerCase().includes(searchTerm) ? 'block' : 'none';
+    });
+}
 
-const whatsappURL = "https://wa.me/" + phoneNumber + "?text=" + text;
+// Run on load
+window.onload = function() {
+    setActiveNav();
+    // Other init functions...
+};
+// Service click handler + search
+document.addEventListener('DOMContentLoaded', () => {
+    const serviceItems = document.querySelectorAll('.service-item');
+    
+    serviceItems.forEach(item => {
+        item.addEventListener('click', () => {
+            showServiceDetails(item);
+        });
+    });
+});
 
-msg.textContent = "Opening WhatsApp...";
-msg.className = "form-msg success";
+function showServiceDetails(item) {
+    document.getElementById('respName').textContent = item.querySelector('h3').textContent;
+    document.getElementById('respPrice').textContent = item.dataset.price;
+    document.getElementById('respTurnaround').textContent = item.dataset.turnaround;
+    
+    const includesList = document.getElementById('respIncludes');
+    includesList.innerHTML = '';
+    item.dataset.includes.split(',').forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item.trim();
+        includesList.appendChild(li);
+    });
+    
+    document.getElementById('serviceResponse').style.display = 'block';
+}
 
-window.open(whatsappURL, "_blank");
-
+function filterServices() {
+    const searchTerm = document.getElementById('serviceSearch').value.toLowerCase();
+    const cards = document.querySelectorAll('.service-item');
+    
+    cards.forEach(card => {
+        const name = card.getAttribute('data-name').toLowerCase();
+        card.style.display = name.includes(searchTerm) ? 'block' : 'none';
+    });
+}
+// Toggle artist profile (Part-2 style)
+function toggleProfile(card) {
+    const details = card.querySelector('.profile-details');
+    const isVisible = details.style.display === 'block';
+    
+    // Close all other profiles
+    document.querySelectorAll('.profile-details').forEach(d => {
+        d.style.display = 'none';
+    });
+    
+    // Toggle current
+    details.style.display = isVisible ? 'none' : 'block';
 }

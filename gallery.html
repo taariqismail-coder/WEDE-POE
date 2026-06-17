@@ -1,61 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Gallery | Riqos Productions</title>
-<meta name="description" content="Explore visual archives, studio sessions and creative work by Riqos Productions.">
-
-<link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Riqos Productions</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
+    <nav>
+        <div class="logo">RIQOS PROD</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a class="active" href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="enquiry.html">Enquiry</a></li>
+        </ul>
+    </nav>
 
-<nav>
-<div class="logo">RIQOS PROD</div>
+    <section>
+        <h2 class="title">VISUAL ARCHIVES</h2>
+        <p class="text">
+            A curated archive of studio sessions, music video stills,
+            production environments, and cinematic visuals.
+        </p>
 
-<ul class="nav-links">
-<li><a href="index.html">Home</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="services.html">Services</a></li>
-<li><a class="active" href="gallery.html">Gallery</a></li>
-<li><a href="contact.html">Contact</a></li>
-<li><a href="enquiry.html">Enquiry</a></li>
-</ul>
-</nav>
+        <!-- Image Grid -->
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="Assets/studio sesh.jpeg" alt="Studio Session">
+            </div>
+            <div class="gallery-item">
+                <img src="Assets/mv bts.jpeg" alt="Music Video Shoot">
+            </div>
+            <div class="gallery-item">
+                <img src="Assets/bts mv.jpeg" alt="Behind The Scenes">
+            </div>
+            <div class="gallery-item">
+                <img src="Assets/production setup.jpeg" alt="Production Setup">
+            </div>
+        </div>
 
-<section>
+        <!-- Video Grid -->
+        <h2 class="title" style="margin-top:70px;">Video Highlights</h2>
+        <div class="video-grid">
+            <div class="video-card">
+                <video controls>
+                    <source src="Assets/extreme bts 1.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-card">
+                <video controls>
+                    <source src="Assets/extreme bts 2.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-card">
+                <video controls>
+                    <source src="Assets/joey push up.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </section>
 
-<h2 class="section-title reveal">VISUAL ARCHIVES</h2>
-
-<div class="filter-buttons">
-
-</div>
-
-<div class="gallery-grid">
-
-<img class="gallery-item studio" src="Assets/studio sesh.jpeg" onclick="openLightbox(this.src)">
-
-<video class="gallery-item bts" controls onclick="openLightbox(this.src)">
-  <source src="Assets/extreme bts 1.mp4" type="video/mp4" >
-</video>
-
-<img class="gallery-item video" src="Assets/bts mv.jpeg" onclick="openLightbox(this.src)">
-
-<img class="gallery-item studio" src="Assets/studio sesh.jpeg" onclick="openLightbox(this.src)">
-
-</div>
-
-</section>
-
-<div id="lightbox" onclick="closeLightbox()">
-<img id="lightbox-img">
-</div>
-
-<footer>© 2026 Riqos Productions</footer>
-
-<script src="Js/scrpt.js"></script>
-
+    <footer>© 2026 Riqos Productions</footer>
+    <script src="Js/scrpt.js"></script>
 </body>
 </html>

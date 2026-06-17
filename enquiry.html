@@ -1,78 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Booking Enquiry | Riqos Productions</title>
-
-<link rel="stylesheet" href="css/style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Enquiry | Riqos Productions</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
+    <nav>
+        <div class="logo">RIQOS PROD</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a class="active" href="enquiry.html">Enquiry</a></li>
+        </ul>
+    </nav>
 
-<nav>
-<div class="logo">RIQOS PROD</div>
+    <section>
+        <h2 class="section-title reveal">BOOK A SESSION</h2>
 
-<ul class="nav-links">
-<li><a href="index.html">Home</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="services.html">Services</a></li>
-<li><a href="gallery.html">Gallery</a></li>
-<li><a href="contact.html">Contact</a></li>
-<li><a class="active" href="enquiry.html">Enquiry</a></li>
-</ul>
-</nav>
+        <form id="bookingForm">
+            <label for="name">Artist Name</label>
+            <input id="name" placeholder="Your name">
 
-<section>
+            <label for="email">Email Address</label>
+            <input id="email" type="email" placeholder="you@example.com">
 
-<h2 class="section-title reveal">BOOK A SESSION</h2>
+            <label for="service">Service</label>
+            <select id="service">
+                <option value="800">Beat Production</option>
+                <option value="500">Mixing & Mastering</option>
+                <option value="3000">Music Video</option>
+                <option value="7000">Artist Development</option>
+            </select>
 
-<form id="bookingForm">
+            <label for="hours">Session Type</label>
+            <select id="hours">
+                <option value="0">Quick Session</option>
+                <option value="400">Standard Session</option>
+                <option value="900">Full Day Session</option>
+            </select>
 
-<label for="name">Artist Name</label>
-<input id="name" placeholder="Your name">
+            <label for="details">Project Details</label>
+            <textarea id="details" placeholder="Describe your project in detail"></textarea>
 
-<label for="email">Email Address</label>
-<input id="email" type="email" placeholder="you@example.com">
+            <div class="price-box">
+                Estimated Price: <span id="price">R0</span>
+            </div>
 
-<label for="service">Service</label>
-<select id="service">
-<option value="800">Beat Production</option>
-<option value="500">Mixing & Mastering</option>
-<option value="3000">Music Video</option>
-<option value="7000">Artist Development</option>
-</select>
+            <div class="form-msg" id="formMsg"></div>
 
-<label for="hours">Session Type</label>
-<select id="hours">
-<option value="0">Quick Session</option>
-<option value="400">Standard Session</option>
-<option value="900">Full Day Session</option>
-</select>
+            <button type="button" class="btn" onclick="calculateBooking()">Calculate</button>
+            <button type="button" class="btn ghost" onclick="sendBooking('whatsapp')">Send WhatsApp</button>
+            <button type="button" class="btn ghost" onclick="sendBooking('email')">Send Email</button>
+        </form>
+    </section>
 
-<label for="details">Project Details</label>
-<textarea id="details" placeholder="Describe your project in detail"></textarea>
+    <footer>© 2026 Riqos Productions</footer>
 
-<div class="price-box">
-Estimated Price: <span id="price">R0</span>
-</div>
-
-<div class="form-msg" id="formMsg"></div>
-
-<button type="button" class="btn" onclick="calculateBooking()">Calculate</button>
-<button type="button" class="btn ghost" onclick="sendBooking()">Send WhatsApp</button>
-<button type="button" class="btn ghost" onclick="sendBooking()">Send Email</button>
-
-</form>
-
-</section>
-
-<footer>© 2026 Riqos Productions</footer>
-
-<script src="Js/scrpt.js"></script>
-
+    <script src="Js/scrpt.js"></script>
 </body>
 </html>

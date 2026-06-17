@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services | Riqos Productions</title>
-    <meta name="description" content="Professional music production, engineering, visuals and artist development.">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -20,84 +19,47 @@
         </ul>
     </nav>
 
-    <section class="services-section">
-        <h2 class="section-title reveal">OUR SERVICES</h2>
-        <p class="text">Professional music production, engineering, visuals and artist development.</p>
+    <section>
+        <h2 class="title">What We Do</h2>
 
-        <input type="text" id="serviceSearch" placeholder="Search services..." onkeyup="filterServices()">
-
-        <div class="grid" id="serviceGrid">
-            <div class="service-item card reveal"
-                 data-name="Beat Production"
-                 data-price="From R800"
-                 data-turnaround="2 - 4 days"
-                 data-includes="Custom instrumental,Up to 3 revisions,Trackout stems on request,WAV + MP3 delivery">
-                <h3>Beat Production</h3>
-                <p>Starting from R800</p>
-            </div>
-
-            <div class="service-item card reveal"
-                 data-name="Mixing & Mastering"
-                 data-price="From R500"
-                 data-turnaround="1 - 3 days"
-                 data-includes="Full vocal & instrumental mix,Loudness mastering for streaming,2 rounds of revisions,WAV + MP3 delivery">
-                <h3>Mixing & Mastering</h3>
-                <p>Starting from R500</p>
-            </div>
-
-            <div class="service-item card reveal"
-                 data-name="Music Video Production"
-                 data-price="From R2500"
-                 data-turnaround="5 - 7 days"
-                 data-includes="Concept & storyboard,Full day filming,Cinematic colour grading,Final edit + 1 social cutdown">
-                <h3>Music Video Production</h3>
-                <p>Starting from R2500</p>
-            </div>
-
-            <div class="service-item card reveal"
-                 data-name="Artist Development"
-                 data-price="Custom pricing"
-                 data-turnaround="Ongoing"
-                 data-includes="Sound & brand direction,Release strategy,Studio session planning,Ongoing creative mentorship">
-                <h3>Artist Development</h3>
-                <p>Custom pricing</p>
-            </div>
-
-            <div class="service-item card reveal"
-                 data-name="Brand Design"
-                 data-price="From R1200"
-                 data-turnaround="3 - 5 days"
-                 data-includes="Logo & visual identity,Colour palette & typography,Social media templates,Brand guideline document">
-                <h3>Brand Design</h3>
-                <p>Identity development</p>
-            </div>
-        </div>
-
-        <div id="serviceResponse">
-            <h3 id="respName"></h3>
-            <div class="resp-meta">
-                <div>Price: <span id="respPrice"></span></div>
-                <div>Turnaround: <span id="respTurnaround"></span></div>
-            </div>
-            <ul id="respIncludes"></ul>
-            <a href="enquiry.html" class="btn">Book This Service</a>
+        <div class="grid">
+            <div class="card">Music Production <div class="price">From R800</div></div>
+            <div class="card">Mixing & Mastering <div class="price">From R500</div></div>
+            <div class="card">Music Videos <div class="price">From R2500</div></div>
+            <div class="card">Video Production <div class="price">From R3000</div></div>
+            <div class="card">Artist Development <div class="price">Custom Packages</div></div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
+    <!-- Service Showcase Videos (Exact Part 2 style) -->
     <section>
-        <h2 class="section-title reveal">FAQ</h2>
-        <div class="faq-item">
-            <button class="faq-question">How long does production take?</button>
-            <div class="faq-answer"><p>Usually between 2 and 7 days depending on complexity.</p></div>
-        </div>
-        <div class="faq-item">
-            <button class="faq-question">Can I request exclusive beats?</button>
-            <div class="faq-answer"><p>Yes. Fully exclusive licensing available.</p></div>
-        </div>
-        <div class="faq-item">
-            <button class="faq-question">Do you handle visuals?</button>
-            <div class="faq-answer"><p>Yes. Cinematic music videos and visual campaigns.</p></div>
+        <h2 class="title">Service Execution Showcase</h2>
+        <p class="text">
+            See how we execute music production, studio recording,
+            and video production at industry level.
+        </p>
+
+        <div class="video-grid">
+            <div class="video-card">
+                <video controls>
+                    <source src="Assets/studio recording environment.mp4" type="video/mp4">
+                </video>
+                <h3>Studio Recording Environment</h3>
+            </div>
+
+            <div class="video-card">
+                <video controls>
+                    <source src="Assets/mv prod process.mp4" type="video/mp4">
+                </video>
+                <h3>Music Video Production Process</h3>
+            </div>
+
+            <div class="video-card">
+                <video controls>
+                    <source src="Assets/beat prod process.mp4" type="video/mp4">
+                </video>
+                <h3>Beat Creation Workflow</h3>
+            </div>
         </div>
     </section>
 

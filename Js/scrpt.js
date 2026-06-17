@@ -469,3 +469,12 @@ function toggleProfile(card) {
     // Toggle current
     details.style.display = isVisible ? 'none' : 'block';
 }
+function filterServices() {
+    const searchTerm = document.getElementById('serviceSearch').value.toLowerCase();
+    const cards = document.querySelectorAll('.service-item');
+    
+    cards.forEach(card => {
+        const name = card.getAttribute('data-name').toLowerCase();
+        card.style.display = name.includes(searchTerm) ? 'block' : 'none';
+    });
+}

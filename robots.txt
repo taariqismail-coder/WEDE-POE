@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Disallow sensitive or private folders
+Disallow: /Assets/private/
+Disallow: /Js/scrpt.js
+Disallow: /css/
+
+# Optional: Slow down aggressive crawlers
+Crawl-delay: 1
+
+
+# Sitemap: https://taariqismail-coder.github.io/WEDE-POE/sitemap.xml

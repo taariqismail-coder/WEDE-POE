@@ -722,13 +722,13 @@ nav ul li a.active {
     margin: 0 auto 20px;
     border-radius: 50%;
     overflow: hidden;
-    border: 5px solid #8a2be2;
+    border: 5px solid #e70000;
     box-shadow: 0 0 0 8px rgba(138, 43, 226, 0.1);
     transition: all 0.4s ease;
 }
 
 .artist-card:hover .artist-img-container {
-    border-color: #a855f7;
+    border-color: #f10000;
     transform: scale(1.08);
 }
 
@@ -785,5 +785,5 @@ nav ul li a.active {
 }
 
 .profile-details strong {
-    color: #a855f7;
+    color: #8a0909;
 }
